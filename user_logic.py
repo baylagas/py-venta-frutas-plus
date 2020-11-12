@@ -27,3 +27,28 @@ class UserLogic(Logic):
             userDict["id"],
         )
         return userObj
+
+    def insertUser(self, user, password, email):
+        database = self.database
+        sql = (
+            f"INSERT INTO `ventafrutasplusdb`.`user`(`id`,`user`,`password`,`email`) "
+            + f"VALUES(0,'{user}','{password}','{email}');"
+        )
+        rows = database.executeNonQueryRows(sql)
+        return rows
+
+    def updateUserById(self, id, user, password, email):
+        database = self.database
+        sql = (
+            "UPDATE `ventafrutasplusdb`.`user` "
+            + f"SET `user` = '{user}', `password` = '{password}', `email` = '{email}' "
+            + f"WHERE `id` = {id};"
+        )
+        rows = database.executeNonQueryRows(sql)
+        return rows
+
+    def deleteUserById(self, id):
+        database = self.database
+        sql = f"DELETE FROM `ventafrutasplusdb`.`user` WHERE id = {id};"
+        rows = database.executeNonQueryRows(sql)
+        return rows
