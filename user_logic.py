@@ -15,6 +15,7 @@ class UserLogic(Logic):
             userList.append(newUser)
         return userList
 
+    # polimorfismo
     def createUserObj(self, id, user, password, email):
         userObj = UserObj(id, user, password, email)
         return userObj
