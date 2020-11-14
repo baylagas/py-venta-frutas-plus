@@ -37,6 +37,13 @@ logic = ProductLogic()
 
 # logic.insertProduct("kiwi", 2.50)
 
-productList = logic.getAllProducts()
-for productObj in productList:
-    print(productObj.id, productObj.name, productObj.cost)
+# productList = logic.getAllProducts()
+# for productObj in productList:
+#     print(productObj.id, productObj.name, productObj.cost)
+
+# import os
+
+# print(os.getcwd())
+# wd = os.getcwd()
+# musicfiles = "\\music"
+# print(wd + musicfiles)
