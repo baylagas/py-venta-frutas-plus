@@ -1,11 +1,12 @@
 # from dx_logic import Logic
 
 from user_logic import UserLogic
+from product_logic import ProductLogic
 
-logic = UserLogic()
-userList = logic.getAllUsers()
-for userObj in userList:
-    print(userObj.id, userObj.user, userObj.password, userObj.email)
+# logic = UserLogic()
+# userList = logic.getAllUsers()
+# for userObj in userList:
+#     print(userObj.id, userObj.user, userObj.password, userObj.email)
 
 # logic.insertUser("test02", "123", "test02@gmail.com")
 
@@ -30,4 +31,6 @@ for userObj in userList:
 # else:
 #     print("el usuario no existe")
 
-# logic = Logic()
+# logic = UserLogic()
+
+logic = ProductLogic()
