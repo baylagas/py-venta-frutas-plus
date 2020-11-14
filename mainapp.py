@@ -47,3 +47,9 @@ logic = ProductLogic()
 # wd = os.getcwd()
 # musicfiles = "\\music"
 # print(wd + musicfiles)
+
+# print(os.listdir(os.getcwd()))
+# itemList = os.listdir(os.getcwd())
+# for item in itemList:
+#     if ".py" in item:
+#         print(item.replace(".py", ""))
