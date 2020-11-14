@@ -34,3 +34,9 @@ from product_logic import ProductLogic
 # logic = UserLogic()
 
 logic = ProductLogic()
+
+# logic.insertProduct("kiwi", 2.50)
+
+productList = logic.getAllProducts()
+for productObj in productList:
+    print(productObj.id, productObj.name, productObj.cost)
