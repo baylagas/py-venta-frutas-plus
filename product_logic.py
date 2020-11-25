@@ -37,3 +37,19 @@ class ProductLogic(Logic):
         )
         rows = database.executeNonQueryRows(sql)
         return rows
+
+    def updateProductById(self, id, name, cost):
+        database = self.database
+        sql = (
+            "UPDATE `ventafrutasplusdb`.`product` "
+            + f"SET `name` = '{name}', `cost` = {cost} "
+            + f"WHERE `id` = {id};"
+        )
+        rows = database.executeNonQueryRows(sql)
+        return rows
+
+    def deleteProductById(self, id):
+        database = self.database
+        sql = f"DELETE FROM `ventafrutasplusdb`.`product` WHERE id = {id};"
+        rows = database.executeNonQueryRows(sql)
+        return rows

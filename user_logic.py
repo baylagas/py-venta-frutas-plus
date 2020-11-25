@@ -5,15 +5,15 @@ from user_obj import UserObj
 class UserLogic(Logic):
     def __init__(self):
         super().__init__()
+        self.tableName = "user"
 
     def getAllUsers(self):
-        database = self.database
-        data = database.executeQueryRows("select * from user;")
-        userList = []
-        for element in data:
+        userList = super().getAllRows(self.tableName)
+        userObjList = []
+        for element in userList:
             newUser = self.createUserObj(element)
-            userList.append(newUser)
-        return userList
+            userObjList.append(newUser)
+        return userObjList
 
     # polimorfismo
     def createUserObj(self, id, user, password, email):
@@ -49,7 +49,4 @@ class UserLogic(Logic):
         return rows
 
     def deleteUserById(self, id):
-        database = self.database
-        sql = f"DELETE FROM `ventafrutasplusdb`.`user` WHERE id = {id};"
-        rows = database.executeNonQueryRows(sql)
-        return rows
+        super().deleteRowById(id, self.tableName)

@@ -1,20 +1,10 @@
-from pepito_logic import PepitoLogic
+from user_logic import UserLogic
 
-pepitoObj = PepitoLogic()
-pepitoObjList = pepitoObj.getAllProducts()
+print("insert a new user")
+user = input("user:")
+password = input("password:")
+email = input("email:")
 
-for pepito in pepitoObjList:
-    print(pepito.id, pepito.name, pepito.cost)
-
-# import os
-
-# print(os.getcwd())
-# wd = os.getcwd()
-# musicfiles = "\\music"
-# print(wd + musicfiles)
-
-# print(os.listdir(os.getcwd()))
-# itemList = os.listdir(os.getcwd())
-# for item in itemList:
-#     if ".py" in item:
-#         print(item.replace(".py", ""))
+logic = UserLogic()
+rows = logic.insertUser(user, password, email)
+print(f"{rows} affected")
