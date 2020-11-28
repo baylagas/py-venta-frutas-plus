@@ -4,17 +4,21 @@ from product_obj import ProductObj
 
 class ProductLogic(Logic):
     def __init__(self):
-        super().__init__()
+        super().__init__("product")
 
     # code new methods
     def getAllProducts(self):
-        database = self.database
-        data = database.executeQueryRows("select * from product;")
-        productList = []
-        for element in data:
+        productList = super().getAllRows(self.tableName)
+        productObjList = []
+        for element in productList:
             newProduct = self.createProductObj(element)
-            productList.append(newProduct)
-        return productList
+            productObjList.append(newProduct)
+        return productObjList
+
+    def getProductById(self, id):
+        rowDict = super().getRowById(id, self.tableName)
+        newProduct = self.createProductObj(rowDict)
+        return newProduct
 
     # polimorfismo
     def createProductObj(self, id, name, cost):
@@ -49,7 +53,4 @@ class ProductLogic(Logic):
         return rows
 
     def deleteProductById(self, id):
-        database = self.database
-        sql = f"DELETE FROM `ventafrutasplusdb`.`product` WHERE id = {id};"
-        rows = database.executeNonQueryRows(sql)
-        return rows
+        super().deleteRowById(id, self.tableName)

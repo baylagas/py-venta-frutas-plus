@@ -4,8 +4,7 @@ from user_obj import UserObj
 
 class UserLogic(Logic):
     def __init__(self):
-        super().__init__()
-        self.tableName = "user"
+        super().__init__("user")
 
     def getAllUsers(self):
         userList = super().getAllRows(self.tableName)
@@ -14,6 +13,11 @@ class UserLogic(Logic):
             newUser = self.createUserObj(element)
             userObjList.append(newUser)
         return userObjList
+
+    def getUserById(self, id):
+        rowDict = super().getRowById(id, self.tableName)
+        newUser = self.createUserObj(rowDict)
+        return newUser
 
     # polimorfismo
     def createUserObj(self, id, user, password, email):
