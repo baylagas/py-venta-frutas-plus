@@ -1,5 +1,5 @@
-from dx_logic import Logic
-from user_obj import UserObj
+from core.dx_logic import Logic
+from persist_objects.user_obj import UserObj
 
 
 class UserLogic(Logic):

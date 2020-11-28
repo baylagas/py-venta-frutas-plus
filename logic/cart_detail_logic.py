@@ -1,6 +1,6 @@
-from dx_logic import Logic
-from cart_detail_obj import CartDetailObj
-from product_logic import ProductLogic
+from core.dx_logic import Logic
+from persist_objects.cart_detail_obj import CartDetailObj
+from logic.product_logic import ProductLogic
 
 
 class CartDetailLogic(Logic):

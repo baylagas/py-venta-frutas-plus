@@ -1,5 +1,5 @@
-from dx_logic import Logic
-from cart_obj import CartObj
+from core.dx_logic import Logic
+from persist_objects.cart_obj import CartObj
 
 
 class CartLogic(Logic):

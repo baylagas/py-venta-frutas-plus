@@ -1,5 +1,5 @@
-from dx_logic import Logic
-from sale_obj import SaleObj
+from core.dx_logic import Logic
+from persist_objects.sale_obj import SaleObj
 
 
 class SaleLogic(Logic):

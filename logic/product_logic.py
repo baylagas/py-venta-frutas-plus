@@ -1,5 +1,5 @@
-from dx_logic import Logic
-from product_obj import ProductObj
+from core.dx_logic import Logic
+from persist_objects.product_obj import ProductObj
 
 
 class ProductLogic(Logic):

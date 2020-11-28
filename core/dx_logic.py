@@ -1,4 +1,4 @@
-from database_x import DatabaseX
+from core.database_x import DatabaseX
 
 
 class Logic:

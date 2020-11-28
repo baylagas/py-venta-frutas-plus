@@ -1,4 +1,4 @@
-from sale_logic import SaleLogic
+from logic.sale_logic import SaleLogic
 
 logic = SaleLogic()
 # logic.insertSale(3, 35.0, "3333444455556666")
