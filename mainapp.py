@@ -1,15 +1,18 @@
-from logic.sale_logic import SaleLogic
+from logic.sale_detail_logic import SaleDetailLogic
 
-logic = SaleLogic()
-# logic.insertSale(3, 35.0, "3333444455556666")
+logic = SaleDetailLogic()
+# rows = logic.insertSaleDetail(1, 1, 1, 1, 1)
+# print(f"{rows} affected")
 
-# logic.updateSaleById(3, 1, 25.00, "1111222233334444")
+# rows = logic.updateSaleDetailById(1, 1, 2, 2, 1, 2)
+# print(f"{rows} affected")
 
-# logic.deleteSaleById(4)
+# rows = logic.deleteSaleDetailById(10)
+# print(f"{rows} affected")
 
-saleObjList = logic.getAllSales()
-for saleObj in saleObjList:
-    print(saleObj.idUser, saleObj.total, saleObj.cardNumber)
+saleDetailObjList = logic.getAllSaleDetail()
+for saleDetailObj in saleDetailObjList:
+    print(saleDetailObj.cost, saleDetailObj.subtotal)
 
-saleObj = logic.getSaleById(2)
-print(saleObj.idUser, saleObj.total, saleObj.cardNumber)
+saleDetailObj = logic.getSaleDetailById(5)
+print(saleDetailObj.id, saleDetailObj.cost, saleDetailObj.subtotal)
