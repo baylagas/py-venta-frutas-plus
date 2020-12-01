@@ -1,18 +1,20 @@
-from logic.sale_detail_logic import SaleDetailLogic
+from views.user_view import SaleView
 
-logic = SaleDetailLogic()
-# rows = logic.insertSaleDetail(1, 1, 1, 1, 1)
-# print(f"{rows} affected")
+print("venta frutas plus...")
 
-# rows = logic.updateSaleDetailById(1, 1, 2, 2, 1, 2)
-# print(f"{rows} affected")
+run = True
+option = 0
 
-# rows = logic.deleteSaleDetailById(10)
-# print(f"{rows} affected")
+saleView = SaleView()
 
-saleDetailObjList = logic.getAllSaleDetail()
-for saleDetailObj in saleDetailObjList:
-    print(saleDetailObj.cost, saleDetailObj.subtotal)
+while run:
+    print("0 - exit")
+    print("1 - user")
+    print("2 - product")
+    option = input("option: ")
 
-saleDetailObj = logic.getSaleDetailById(5)
-print(saleDetailObj.id, saleDetailObj.cost, saleDetailObj.subtotal)
+    if option == 0:
+        print("exit venta frutas...")
+        break
+    if option == 1:
+        saleView.showMenu()
